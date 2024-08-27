@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +26,8 @@ h1 {
 .wrapper {
   background-color: peachpuff;
   width: 300px;
-  padding: 2rem;
+  height: 450px;
+  padding: 2rem 2rem 0.5rem 2rem;
   border-radius: 1rem;
   box-shadow: 7px 7px 6px -3px rgba(0, 0, 0, 0.1);
 }
@@ -40,7 +46,10 @@ h1 {
 .buttonBox {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .button {
@@ -56,15 +65,21 @@ h1 {
   font-size: 1rem;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+  gap: 2px;
 }
 
 .button:hover {
+  background-color: lightcoral;
   border: 1px solid brown;
 }
 
 .equals {
   background-color: rgb(113, 187, 113);
-  grid-column: 3 / 5;
+}
+
+.btn-equals {
+  grid-column: span 2;
 }
 
 .operation {

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./App.css";
-import DisplayInput from "./components/DisplayInput";
-import Wrapper from "./components/Wrapper";
-import Button from "./components/Button";
-import ButtonBox from "./components/ButtonBox";
+import "../App.css";
+import DisplayInput from "../components/DisplayInput";
+import Wrapper from "../components/Wrapper";
+import Button from "../components/Button";
+import ButtonBox from "../components/ButtonBox";
 
 const buttonList = [
   "√",
@@ -33,8 +33,14 @@ const buttonList = [
 
 const CALC_OPERATOR_LIST = ["+", "-", "*", "/", "%", "^", "√"];
 
-function App() {
+function Calculator() {
   const [displayInput, setDisplayInput] = useState("");
+  const [isEqual, setIsEqual] = useState(false);
+
+  const roundToDecimalPlaces = (number, decimalPlaces) => {
+    const factor = 10 ** decimalPlaces;
+    return Math.round(number * factor) / factor;
+  };
 
   const handleButtonClick = (key) => {
     const inputStr = String(displayInput);
@@ -54,22 +60,31 @@ function App() {
               (match, base, exponent) => `Math.pow(${base}, ${exponent})`
             )
             .replace(/√(\d+)/g, (match, number) => `Math.sqrt(${number})`);
-          const result = eval(expression);
+          let result = eval(expression);
+          result = roundToDecimalPlaces(result, 10);
+
           setDisplayInput(String(result));
+          setIsEqual(true);
         } catch (error) {
           setDisplayInput("Error!");
+          setIsEqual(true);
         }
         break;
       default: {
-        const isLastCharOperator = CALC_OPERATOR_LIST.includes(
-          inputStr.slice(-1)
-        );
-        const isKeyOperator = CALC_OPERATOR_LIST.includes(key);
-
-        if (isLastCharOperator && isKeyOperator) {
-          setDisplayInput(inputStr.slice(0, -1) + key);
+        if (isEqual) {
+          setDisplayInput(key);
+          setIsEqual(false);
         } else {
-          setDisplayInput(inputStr + key);
+          const isLastCharOperator = CALC_OPERATOR_LIST.includes(
+            inputStr.slice(-1)
+          );
+          const isKeyOperator = CALC_OPERATOR_LIST.includes(key);
+
+          if (isLastCharOperator && isKeyOperator) {
+            setDisplayInput(inputStr.slice(0, -1) + key);
+          } else {
+            setDisplayInput(inputStr + key);
+          }
         }
         break;
       }
@@ -82,16 +97,18 @@ function App() {
 
   return (
     <div>
-      <h1>My Calculator</h1>
+      <h1 className="text-2xl mb-8">Calculator</h1>
       <Wrapper>
         <DisplayInput value={displayInput} onChange={handleInputChange} />
         <ButtonBox>
           {buttonList.map((btn, index) => (
-            <Button
-              value={btn}
-              key={index}
-              onClick={() => handleButtonClick(btn)}
-            />
+            <div className="w-auto h-auto flex justify-center items-center">
+              <Button
+                value={btn}
+                key={index}
+                onClick={() => handleButtonClick(btn)}
+              />
+            </div>
           ))}
         </ButtonBox>
       </Wrapper>
@@ -99,4 +116,4 @@ function App() {
   );
 }
 
-export default App;
+export default Calculator;
