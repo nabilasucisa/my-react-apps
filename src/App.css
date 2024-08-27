@@ -61,7 +61,7 @@
 
 /* Sidebar styles */
 .sidebar {
-  width: 16rem; /* Sets the width of the sidebar */
+  width: 16rem;
 }
 
 .sidebar .logo {
@@ -71,7 +71,7 @@
 .sidebar .nav-link {
   display: flex;
   align-items: center;
-  font-size: 1.125rem; /* Adjusts font size */
+  font-size: 1.125rem;
   padding: 0.5rem;
   color: #000000;
   transition: color 0.3s;

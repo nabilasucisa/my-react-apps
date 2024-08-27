@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../apis/axiosInstance";
 import React from "react";
-import { FaRandom, FaBook } from "react-icons/fa"; // Import icons for better UI
-
+import { FaRandom, FaBook } from "react-icons/fa";
 function QuranVerse() {
   const [surahName, setSurahName] = useState("");
   const [surahNumber, setSurahNumber] = useState(0);
   const [ayahNumber, setAyahNumber] = useState(0);
   const [randomAyah, setRandomAyah] = useState({});
   const [randomTafsirAyah, setRandomTafsirAyah] = useState({});
-  const [showTafsir, setShowTafsir] = useState(false); // State to toggle Tafsir
-
+  const [showTafsir, setShowTafsir] = useState(false);
   const getRandomSurahNumber = Math.round(Math.random() * 114);
 
   const getSurah = async (surahNumber) => {
@@ -75,7 +73,7 @@ function QuranVerse() {
         <div className="flex justify-center space-x-4">
           <button
             onClick={() => {
-              setShowTafsir(!showTafsir); // Toggle Tafsir visibility
+              setShowTafsir(!showTafsir);
             }}
             className="bg-[#f7a83b] text-[#ffffff] px-6 py-2 rounded-lg shadow-md hover:bg-[#e98a22] transition duration-300 flex items-center space-x-2"
           >

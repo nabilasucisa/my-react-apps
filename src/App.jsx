@@ -1,9 +1,8 @@
-// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Calculator from "./pages/Calculator";
 import QuranVerse from "./pages/QuranVerse";
-import Sidebar from "./components/Sidebar"; // Ensure this path is correct
+import Sidebar from "./components/Sidebar";
 import "./App.css";
 
 function App() {
