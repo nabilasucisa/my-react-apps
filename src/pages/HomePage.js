@@ -3,7 +3,7 @@ import React from "react";
 function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full bg-[#FFF2E5] text-black p-4">
-      <div className="bg-[#f8ae91] p-6 rounded-lg shadow-lg max-w-md text-center">
+      <div className="bg-[#f8ae91] p-6 rounded-lg shadow-lg text-center">
         <h1 className="text-3xl font-bold mb-4 text-black font-sans">
           Hi! Welcome to the Application 🙆🏻‍♀️
         </h1>

@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axiosInstance from "../apis/axiosInstance";
-import React from "react";
-import { FaRandom, FaBook } from "react-icons/fa";
 function QuranVerse() {
   const [surahName, setSurahName] = useState("");
   const [surahNumber, setSurahNumber] = useState(0);
@@ -56,7 +54,7 @@ function QuranVerse() {
             {surahName} {surahNumber}:{ayahNumber}
           </span>
         </div>
-        <div className="text-3xl font-bold mt-2 mb-4 text-center text-[#e8a546] font-arabic">
+        <div className="text-3xl font-bold mt-2 mb-4 text-center text-[#e8a546] font-arabic leading-40">
           {randomAyah.teksArab}
         </div>
         <div className="text-lg mb-4 text-center italic text-[#5a5a5a]">

@@ -4,7 +4,7 @@ import { FaCalculator, FaBook, FaHome } from "react-icons/fa";
 
 function Sidebar() {
   return (
-    <div className="sidebar bg-[#f8ccbc] p-4 h-screen w-64">
+    <div className="sidebar bg-[#f8ccbc] p-4 h-screen">
       <nav>
         <ul className="space-y-4">
           <li>

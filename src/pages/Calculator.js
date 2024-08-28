@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../App.css";
-import DisplayInput from "../components/DisplayInput";
-import Wrapper from "../components/Wrapper";
 import Button from "../components/Button";
 import ButtonBox from "../components/ButtonBox";
+import DisplayInput from "../components/DisplayInput";
+import Wrapper from "../components/Wrapper";
 
 const buttonList = [
   "√",
