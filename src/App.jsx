@@ -4,6 +4,7 @@ import Calculator from "./pages/Calculator";
 import QuranVerse from "./pages/QuranVerse";
 import Sidebar from "./components/Sidebar";
 import "./App.css";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <Sidebar />
         <div className="flex-1 p-4">
           <Routes>
-            <Route path="/" element={<Calculator />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/calculator" element={<Calculator />} />
             <Route path="/quran" element={<QuranVerse />} />
           </Routes>
         </div>

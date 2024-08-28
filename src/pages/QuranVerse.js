@@ -46,13 +46,13 @@ function QuranVerse() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full h-screen justify-center items-center bg-[#fff8f0] p-4">
+    <div className="flex flex-col w-full h-screen justify-start items-center bg-[#fff8f0] p-4">
       <div className="flex flex-col w-full justify-center items-center align-middle bg-[#f8ccbc] text-[#000000] rounded-lg shadow-lg p-6 relative z-10">
         <h1 className="text-4xl font-bold mb-4 text-center text-[#000000]">
           Quran Verse Generator
         </h1>
         <div className="text-lg mb-4 text-center text-[#333333]">
-          <span className="font-semibold">
+          <span className="text-sm font-semibold text-[#5a5a5a]">
             {surahName} {surahNumber}:{ayahNumber}
           </span>
         </div>
@@ -77,15 +77,15 @@ function QuranVerse() {
             }}
             className="bg-[#f7a83b] text-[#ffffff] px-6 py-2 rounded-lg shadow-md hover:bg-[#e98a22] transition duration-300 flex items-center space-x-2"
           >
-            <FaBook className="text-lg" />
-            <span>{showTafsir ? "Hide Tafsir" : "Show Tafsir"}</span>
+            {/* <FaBook className="text-lg" /> */}
+            <span>{showTafsir ? "📖 Hide Tafsir" : "📖 Show Tafsir"}</span>
           </button>
           <button
             onClick={() => getRandomAyah(getRandomSurahNumber)}
             className="bg-[#4CAF50] text-[#ffffff] px-6 py-2 rounded-lg shadow-md hover:bg-[#45a049] transition duration-300 flex items-center space-x-2"
           >
-            <FaRandom className="text-lg" />
-            <span>Randomize</span>
+            {/* <FaRandom className="text-lg" /> */}
+            <span>🪄 Randomize</span>
           </button>
         </div>
       </div>

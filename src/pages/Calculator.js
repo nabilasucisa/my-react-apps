@@ -97,7 +97,7 @@ function Calculator() {
 
   return (
     <div>
-      <h1 className="text-2xl mb-8">Calculator</h1>
+      <h1 className="text-2xl mb-8 font-sans font-semibold">Calculator</h1>
       <Wrapper>
         <DisplayInput value={displayInput} onChange={handleInputChange} />
         <ButtonBox>
